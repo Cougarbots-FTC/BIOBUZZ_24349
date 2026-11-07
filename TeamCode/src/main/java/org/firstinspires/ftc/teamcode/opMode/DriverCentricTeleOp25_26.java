@@ -1,4 +1,5 @@
-package org.firstinspires.ftc.teamcode.opmodes;
+/*
+package org.firstinspires.ftc.teamcode.opMode;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -14,7 +15,7 @@ public class DriverCentricTeleOp25_26 extends OpMode {
     private Outtake25_26 outtake;
     private Intake2434925_26 intake;
     private MecanumDrive25_26 mecanumDrive;
-    //private Holder holder;
+    private Holder holder;
 
     @Override
     public void init() {
@@ -37,3 +38,4 @@ public class DriverCentricTeleOp25_26 extends OpMode {
         mecanumDrive.addTelemetry(this);
     }
 }
+*/

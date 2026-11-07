@@ -31,7 +31,9 @@ import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
             //this will make drivetrain used correctly
             back_left.setDirection(DcMotorEx.Direction.REVERSE);
             //front_right.setDirection(DcMotorEx.Direction.REVERSE);
-            //back_right.setDirection(DcMotorEx.Direction.REVERSE);
+            back_right.setDirection(DcMotorEx.Direction.REVERSE);
+            front_left.setDirection(DcMotorEx.Direction.REVERSE);
+
 
             back_left.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.BRAKE);
             back_right.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.BRAKE);
