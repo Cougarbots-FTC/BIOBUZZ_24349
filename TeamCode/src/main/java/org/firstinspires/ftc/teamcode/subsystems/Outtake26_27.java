@@ -21,7 +21,7 @@ public class Outtake26_27 {
         outtake.setPower(-driver2.left_stick_y);
 
         if (driver2.left_trigger > 0.1) {
-            outtake.setVelocity(-1500);
+            outtake.setVelocity(-1420);
         } else {
             outtake.setVelocity(0);
         }

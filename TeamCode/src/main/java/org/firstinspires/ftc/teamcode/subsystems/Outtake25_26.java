@@ -13,7 +13,7 @@ public class Outtake25_26 {
     public Outtake25_26(OpMode mode) {
         driver1 = mode.gamepad1;
         driver2 = mode.gamepad2;
-        targetVelocity = 1200;
+        targetVelocity = 1190;
 
         HardwareMap hardwareMap = mode.hardwareMap;
         outtake = hardwareMap.get(DcMotorEx.class, "Outtake");   //e 3

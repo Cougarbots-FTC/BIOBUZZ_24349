@@ -13,7 +13,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
         private final DcMotorEx front_left, front_right, back_left, back_right;
 
         private final Gamepad driver1, driver2;
-        private final double AUTO_SPEED = -0.75;
+        //private final double AUTO_SPEED = -0.75;
 
         private double speed = 1;
 
@@ -41,20 +41,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
             front_right.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.BRAKE);
 
         }
-        /*
-        public void MecanumDriveStraff(OpMode mode){
-            driver1 = mode.gamepad1;
-            driver2 = mode.gamepad2;
 
-            HardwareMap hardwareMap = mode.hardwareMap;
-            front_left = hardwareMap.get(DcMotorEx.class, "FrontLeft"); //2
-            front_right = hardwareMap.get(DcMotorEx.class, "FrontRight"); //0
-
-            //this should fix our straffing problem, bc it would work for usual driving but not for straffing:
-            front_right.setDirection(DcMotorEx.Direction.REVERSE);
-            front_left.setDirection(DcMotorEx.Direction.REVERSE);
-        }
-    */
         public void mecanumDrive() {
 
             if (driver1.right_bumper) {
@@ -82,31 +69,13 @@ import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
             back_right.setPower(rightBackPower);
         }
 
-    /*private void driveFieldRelative(double forward, double right, double rotate) {
-        // First, convert direction being asked to drive to polar coordinates
-        double theta = Math.atan2(forward, right);
-        double r = Math.hypot(right, forward);
 
-        // Second, rotate angle by the angle the robot is pointing
-        theta = AngleUnit.normalizeRadians(theta -
-                imu.getRobotYawPitchRollAngles().getYaw(AngleUnit.RADIANS));
+        public void auto(int time, double autoSpeed) {
 
-        // Third, convert back to cartesian
-        double newForward = r * Math.sin(theta);
-        double newRight = r * Math.cos(theta);
-
-        // Finally, call the drive method with robot relative forward and right amounts
-        drive(newForward, newRight, rotate);
-    }
-*/
-
-        // Thanks to FTC16072 for sharing this code!!
-        public void Auto(int time) {
-
-            front_left.setPower(AUTO_SPEED);
-            front_right.setPower(AUTO_SPEED);
-            back_left.setPower(AUTO_SPEED);
-            back_right.setPower(AUTO_SPEED);
+            front_left.setPower(autoSpeed);
+            front_right.setPower(autoSpeed);
+            back_left.setPower(autoSpeed);
+            back_right.setPower(autoSpeed);
 
             try {
                 sleep(time);
@@ -114,7 +83,6 @@ import org.firstinspires.ftc.robotcore.external.navigation.CurrentUnit;
                 throw new RuntimeException(e);
             }
             front_left.setPower(0);
-            //.setVelocity() or .setSpeed()
             front_right.setPower(0);
             back_left.setPower(0);
             back_right.setPower(0);
